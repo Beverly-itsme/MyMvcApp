@@ -1,4 +1,4 @@
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using B.filmes.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -23,6 +23,17 @@ namespace B.filmes.Controllers
             return View();
         }
 
+        // ✅ Adicione os métodos aqui:
+        public IActionResult MenuAdmin()
+        {
+            return View();
+        }
+
+        public IActionResult MenuUsuario()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
@@ -30,3 +41,4 @@ namespace B.filmes.Controllers
         }
     }
 }
+
