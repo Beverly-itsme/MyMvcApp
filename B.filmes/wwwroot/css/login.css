@@ -21,11 +21,12 @@ h2 {
     margin-bottom: 20px;
 }
 
-/*label {
+label {
     display: block;
     margin-top: 10px;
-}*/
+}
 
+input[type="text"],
 input[type="text"],
 input[type="password"] {
     width: 100%;
@@ -58,3 +59,4 @@ input[type="submit"] {
     text-align: center;
     margin-top: 10px;
 }
+

@@ -1,0 +1,34 @@
+﻿@model B.filmes.Models.Usuario
+
+@{
+    ViewData["Title"] = "Cadastro";
+}
+<!-- Linka o CSS -->
+<link rel="stylesheet" href="~/css/login.css" />
+
+<h2>Cadastro</h2>
+
+<form asp-action="Index" method="post">
+    <div>
+        <label>Nome</label>
+        <input type="text" name="Nome" required />
+    </div>
+    <div>
+        <label>Email</label>
+        <input type="email" name="Email" required />
+    </div>
+    <div>
+        <label>Senha</label>
+        <input type="password" name="Senha" required />
+    </div>
+    <div>
+        <input type="submit" value="Cadastrar" />
+    </div>
+</form>
+
+@if (ViewBag.Erro != null)
+{
+    <p style="color:red">@ViewBag.Erro</p>
+}
+
+
