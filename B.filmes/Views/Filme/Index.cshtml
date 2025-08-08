@@ -1,13 +1,13 @@
 ﻿@model List<B.filmes.Models.Filme>
 
 @{
-    ViewData["Title"] = "Dashboard Administrador";
+    ViewData["Title"] = "Filmes";
 }
 
-<h2>Dashboard Administrador - Gerenciar Filmes</h2>
+<h2>Filmes</h2>
 
 <p>
-    <a href="@Url.Action("Criar", "Filme")" class="btn btn-primary">Adicionar Filme</a>
+    <a href="@Url.Action("Criar")" class="btn btn-primary">Adicionar Filme</a>
 </p>
 
 <table class="table table-striped">
@@ -36,13 +36,13 @@
                 <td>@filme.Genero</td>
                 <td>@filme.Diretor</td>
                 <td>
-                    <a href="@Url.Action("Editar", "Filme", new { id = filme.Id })" class="btn btn-warning btn-sm">Editar</a>
-                    <a href="@Url.Action("Deletar", "Filme", new { id = filme.Id })" class="btn btn-danger btn-sm">Remover</a>
+                    <a href="@Url.Action("Detalhes", new { id = filme.Id })" class="btn btn-info btn-sm">Detalhes</a>
+                    <a href="@Url.Action("Editar", new { id = filme.Id })" class="btn btn-warning btn-sm">Editar</a>
+                    <a href="@Url.Action("Deletar", new { id = filme.Id })" class="btn btn-danger btn-sm" onclick="return confirm('Confirma exclusão deste filme?');">Remover</a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
-
 
 

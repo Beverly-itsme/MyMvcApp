@@ -1,0 +1,64 @@
+﻿@model B.filmes.Models.Filme
+
+@{
+    ViewData["Title"] = "Adicionar Filme";
+}
+
+<h2>Adicionar Filme</h2>
+
+<form asp-action="Criar" method="post">
+    <div class="mb-3">
+        <label asp-for="Titulo" class="form-label"></label>
+        <input asp-for="Titulo" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Ano" class="form-label"></label>
+        <input asp-for="Ano" type="number" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Genero" class="form-label"></label>
+        <input asp-for="Genero" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Diretor" class="form-label"></label>
+        <input asp-for="Diretor" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Duracao" class="form-label"></label>
+        <input asp-for="Duracao" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Sinopse" class="form-label"></label>
+        <textarea asp-for="Sinopse" class="form-control" rows="3"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="LinkTrailer" class="form-label"></label>
+        <input asp-for="LinkTrailer" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="LinkFilme" class="form-label"></label>
+        <input asp-for="LinkFilme" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Plataformas" class="form-label"></label>
+        <input asp-for="Plataformas" class="form-control" placeholder="Separe por vírgulas" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="ImagemCapa" class="form-label"></label>
+        <input asp-for="ImagemCapa" class="form-control" placeholder="URL da imagem" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Salvar</button>
+    <a href="@Url.Action("Index")" class="btn btn-secondary">Cancelar</a>
+</form>
+
+

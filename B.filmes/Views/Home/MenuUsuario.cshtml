@@ -1,8 +1,45 @@
-﻿@{
-    ViewData["Title"] = "Menu do Usuário";
+﻿@model List<B.filmes.Models.Filme>
+
+@{
+    ViewData["Title"] = "Dashboard Usuário";
 }
 
-<h2>Menu do Usuário</h2>
-<p>Bem-vindo, usuário!</p>
+<h2>Filmes Disponíveis</h2>
+
+<form method="get" class="form-inline mb-3">
+    <button type="submit" class="btn btn-primary">Pesquisar</button>
+</form>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Capa</th>
+            <th>Título</th>
+            <th>Ano</th>
+            <th>Gênero</th>
+            <th>Detalhes</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var filme in Model)
+        {
+            <tr>
+                <td>
+                    @if (!string.IsNullOrEmpty(filme.ImagemCapa))
+                    {
+                        <img src="@filme.ImagemCapa" alt="Capa" width="60" />
+                    }
+                </td>
+                <td>@filme.Titulo</td>
+                <td>@filme.Ano</td>
+                <td>@filme.Genero</td>
+                <td>
+                    <a href="@Url.Action("Detalhes", "Filme", new { id = filme.Id })" class="btn btn-info btn-sm">Ver detalhes</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
 
 

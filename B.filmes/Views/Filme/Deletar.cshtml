@@ -1,0 +1,17 @@
+﻿@model B.filmes.Models.Filme
+
+@{
+    ViewData["Title"] = "Remover Filme";
+}
+
+<h2>Remover Filme</h2>
+
+<h4>Você tem certeza que deseja remover o filme <strong>@Model.Titulo</strong>?</h4>
+
+<form asp-action="Deletar" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Remover</button>
+    <a href="@Url.Action("Index")" class="btn btn-secondary">Cancelar</a>
+</form>
+
+
